@@ -2,6 +2,10 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
+from Utils.color_logger import get_logger
+
+logger = get_logger(__name__)
+
 SYSTEM_PROMPT: str = """Imagine you are a robot browsing the web, just like humans. Now you need to complete a task.
 In each iteration, you will receive an Observation that includes the last  screenshots of a web browser and the current memory of the agent.
 You have also information about the step that the agent is trying to achieve to solve the task.
@@ -184,3 +188,7 @@ def get_navigation_prompt(task, image, step=1):
             ],
         },
     ]
+
+
+
+
